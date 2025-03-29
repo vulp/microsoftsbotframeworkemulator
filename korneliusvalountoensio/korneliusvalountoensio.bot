@@ -1,0 +1,19 @@
+{
+    "name": "korneliusvalountoensio",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "name": "http://localhost:3978/api/messages",
+            "id": "c6e06720-0c69-11f0-b942-79b8b60ec733",
+            "appId": "",
+            "appPassword": "",
+            "tenantId": "",
+            "endpoint": "http://localhost:3978/api/messages"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\dev\\msbotframework\\korneliusvalountoensio\\korneliusvalountoensio.bot",
+    "overrides": null
+}
