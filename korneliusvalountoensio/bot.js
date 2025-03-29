@@ -5,25 +5,24 @@ const fetch = nodeFetch.default;
 class EchoBot extends ActivityHandler {
     constructor() {
         super();
-        // See https://aka.ms/about-bot-activity-message to learn more about the message and other activity types.
+
         this.onMessage(async (context, next) => {
             const userMessage = context.activity.text;
             const userId = context.activity.from.id; // Get the user ID
-            const backendApiUrl = 'http://localhost:8080/api/bot/receive-message'; // Replace with your backend URL
+            const backendApiUrl = 'http://localhost:8080/api/bot/receive-message';
 
             const response = await fetch('http://localhost:8080/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ 'username':'korneliusvalountoensio', 'password':'changethisforproduction2' }),
+                body: JSON.stringify({ 'username':'korneliusvalountoensio', 'password':'changethisforproduction2' }),// change these and do not use for production
             });
-            console.log(response,'olisko dataa');
+
             let jwtToken;
             if(response) {
                 const data = await response.json();
                 jwtToken = data.token;
-                console.log(jwtToken,'dataa2');
             }
 
             try {
